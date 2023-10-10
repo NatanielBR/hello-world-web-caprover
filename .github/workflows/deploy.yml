@@ -12,11 +12,14 @@ jobs:
         node-version: [18.x]
 
     steps:
-      - uses: a7ul/tar-action@v1.1.3
+      - uses: a7ul/tar-action@v1.1.3  
         with:
           command: c
           cwd: "./"
-          files: ./
+          files: |
+            ./captain-definition
+            ./Dockerfile
+            ./index.html
           outPath: deploy.tar
 
       - name: Deploy App to CapRover
