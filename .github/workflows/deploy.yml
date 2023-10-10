@@ -15,7 +15,11 @@ jobs:
           cwd: "./"
           files: "."
           outPath: deploy.tar
-      
+      - name: Store reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: reports
+          path: .
       - name: Deploy App to CapRover
         uses: caprover/deploy-from-github@v1.0.1
         with:
